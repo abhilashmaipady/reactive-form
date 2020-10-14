@@ -1,0 +1,17 @@
+<form [formGroup]="signupForm" (ngSubmit)="submit()">
+    <app-profile-form formControlName="profile" [model]="testValue"></app-profile-form>
+    <app-password-form formControlName="password"></app-password-form>
+    <button type="submit" (click)="submit()">Sign Up</button>
+    <button type="reset">Reset</button>
+  </form>
+
+  <p>
+    Form is {{signupForm.valid ? 'Valid' : 'Invalid'}}
+  </p>
+  
+  <pre>
+  {{signupForm.value | json}}
+  </pre>
+
+  <!-- <button (click)="setValues()">Set Test Value</button> -->
+  <div [innerHTML]="buffer"></div>
